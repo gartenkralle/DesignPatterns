@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{3114CD03-E4CD-402C-89AB-4D246BE9C706}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "Observer\Observer.csproj", "{ADFFE851-CA5C-4ADA-BCED-2A7A59A7D1ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObserverWithInferfaces", "ObserverWithInterfaces\ObserverWithInferfaces.csproj", "{2A79FF03-093E-438E-AAB7-03E3E7A422BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3114CD03-E4CD-402C-89AB-4D246BE9C706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3114CD03-E4CD-402C-89AB-4D246BE9C706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3114CD03-E4CD-402C-89AB-4D246BE9C706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3114CD03-E4CD-402C-89AB-4D246BE9C706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADFFE851-CA5C-4ADA-BCED-2A7A59A7D1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADFFE851-CA5C-4ADA-BCED-2A7A59A7D1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADFFE851-CA5C-4ADA-BCED-2A7A59A7D1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADFFE851-CA5C-4ADA-BCED-2A7A59A7D1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A79FF03-093E-438E-AAB7-03E3E7A422BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A79FF03-093E-438E-AAB7-03E3E7A422BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A79FF03-093E-438E-AAB7-03E3E7A422BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A79FF03-093E-438E-AAB7-03E3E7A422BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
