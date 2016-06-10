@@ -23,7 +23,7 @@ namespace ObserverWithInferfaces
             kanal1.AddProduct(video2);
 
 
-            Console.WriteLine();
+            Console.WriteLine(); ;
 
 
             foreach (IConsumer abonent in kanal1.Consumers)
