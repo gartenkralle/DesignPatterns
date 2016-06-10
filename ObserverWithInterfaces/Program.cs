@@ -12,7 +12,7 @@ namespace ObserverWithInferfaces
             IProduct video2 = new Video("Sandmann2");
 
             IConsumer abonent1 = new Abonnent("Abonent1");
-            IConsumer abonent2 = new Abonnent("ABonent2");
+            IConsumer abonent2 = new Abonnent("Abonent2");
 
 
             kanal1.AddProduct(video1);
