@@ -1,4 +1,4 @@
-﻿namespace ObserverWithInterfaces
+﻿namespace Test2
 {
     interface IProduct
     {

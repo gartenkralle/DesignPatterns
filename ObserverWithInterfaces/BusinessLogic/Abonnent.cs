@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ObserverWithInterfaces
+namespace Test2
 {
     class Abonnent : IConsumer
     {

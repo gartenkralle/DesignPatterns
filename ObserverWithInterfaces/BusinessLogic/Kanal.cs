@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ObserverWithInterfaces
+namespace Test2
 {
     class Kanal : IProducer
     {

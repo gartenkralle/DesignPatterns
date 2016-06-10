@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ObserverWithInterfaces
+namespace Test2
 {
     class Program
     {
