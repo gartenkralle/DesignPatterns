@@ -1,4 +1,4 @@
-﻿namespace Test3
+﻿namespace Factory
 {
     class Bird
     {

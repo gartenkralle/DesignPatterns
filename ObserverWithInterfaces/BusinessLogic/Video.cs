@@ -1,4 +1,4 @@
-﻿namespace Test2
+﻿namespace ObserverWithInferfaces
 {
     class Video : IProduct
     {

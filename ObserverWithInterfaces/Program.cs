@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Test2
+namespace ObserverWithInferfaces
 {
     class Program
     {

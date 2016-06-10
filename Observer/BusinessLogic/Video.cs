@@ -1,4 +1,4 @@
-﻿namespace Test
+﻿namespace Observer
 {
     class Video
     {
