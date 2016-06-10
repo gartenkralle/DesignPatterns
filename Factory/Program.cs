@@ -1,4 +1,4 @@
-﻿namespace Factory
+﻿namespace Test3
 {
     class Program
     {

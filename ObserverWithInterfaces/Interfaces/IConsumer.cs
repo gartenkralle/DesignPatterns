@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ObserverWithInferfaces
+namespace Test2
 {
     interface IConsumer
     {
