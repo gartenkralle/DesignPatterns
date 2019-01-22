@@ -1,10 +1,10 @@
-﻿namespace Factory
+﻿namespace FactorySimple
 {
-    class AmericanBird : Bird
+    class AmericanBird : IBird
     {
-        public AmericanBird(string name) : base(name)
+        public int GetVelocity()
         {
-
+            return 12;
         }
     }
 }

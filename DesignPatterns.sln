@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{3114CD03-E4CD-402C-89AB-4D246BE9C706}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorySimple", "Factory\FactorySimple.csproj", "{3114CD03-E4CD-402C-89AB-4D246BE9C706}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Observer", "Observer\Observer.csproj", "{ADFFE851-CA5C-4ADA-BCED-2A7A59A7D1ED}"
 EndProject
@@ -30,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01C0B541-2103-4797-A177-9EBA9082B310}
 	EndGlobalSection
 EndGlobal
