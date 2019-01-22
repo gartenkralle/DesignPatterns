@@ -6,9 +6,9 @@ namespace FactorySimple
     {
         static void Main(string[] args)
         {
-            IBird americanBird = BirdFactory.CreateBird(1);
-            IBird europeanBird = BirdFactory.CreateBird(2);
-            IBird africanBird = BirdFactory.CreateBird(3);
+            IBird americanBird = BirdFactory.Create(1);
+            IBird europeanBird = BirdFactory.Create(2);
+            IBird africanBird = BirdFactory.Create(3);
 
             Console.WriteLine(americanBird.GetVelocity());
             Console.WriteLine(europeanBird.GetVelocity());

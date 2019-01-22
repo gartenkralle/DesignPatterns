@@ -2,7 +2,7 @@
 {
     public class BirdFactory
     {
-        public static IBird CreateBird(int id)
+        public static IBird Create(int id)
         {
             IBird bird = null;
 
