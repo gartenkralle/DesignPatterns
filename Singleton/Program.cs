@@ -61,7 +61,7 @@ namespace EagerLoading
 namespace LazyLoadingWithLock
 {
     // Lazy loading (classic way)
-    // Prefer if the singleton object is not needed in any cae
+    // Prefer if the singleton object is not needed in any case
     sealed class Singleton
     {
         private Singleton() { }
@@ -71,7 +71,7 @@ namespace LazyLoadingWithLock
         {
             get
             {
-                if (instance == null) // this line is only for performance improvement
+                if (instance == null) // this line is a performance improvement only
                 {
                     lock (_lock)
                     {
