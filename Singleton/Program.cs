@@ -46,8 +46,6 @@
 
 namespace EagerLoading
 {
-    /* Singleton */
-
     // Eager loading
     // Prefer if the singleton object is needed in any case
     sealed class Singleton
