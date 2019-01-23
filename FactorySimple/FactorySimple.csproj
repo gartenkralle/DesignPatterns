@@ -48,6 +48,8 @@
     <Compile Include="BusinessLogic\IBird.cs" />
     <Compile Include="BusinessLogic\BirdFactory.cs" />
     <Compile Include="BusinessLogic\EuropeanBird.cs" />
+    <Compile Include="BusinessLogic\IBirdFactory.cs" />
+    <Compile Include="IFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

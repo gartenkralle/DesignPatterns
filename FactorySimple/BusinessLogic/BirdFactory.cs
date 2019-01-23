@@ -1,8 +1,8 @@
 ﻿namespace FactorySimple
 {
-    public class BirdFactory
+    public class BirdFactory : IBirdFactory
     {
-        public static IBird Create(int id)
+        public IBird Create(int id)
         {
             IBird bird = null;
 
