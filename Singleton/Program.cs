@@ -46,7 +46,6 @@
 
 namespace EagerLoading
 {
-    // Eager loading
     // Prefer if the singleton object is needed in any case
     sealed class Singleton
     {
@@ -58,7 +57,6 @@ namespace EagerLoading
 
 namespace LazyLoadingWithLock
 {
-    // Lazy loading (classic way)
     // Prefer if the singleton object is not needed in any case
     sealed class Singleton
     {
@@ -90,7 +88,6 @@ namespace LazyLoadingWithLock
 
 namespace LazyLoadingWithLazyClass
 {
-    // Lazy loading (with Lazy class)
     using System;
 
     sealed class Singleton
