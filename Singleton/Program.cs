@@ -4,8 +4,37 @@
     {
         static void Main(string[] args)
         {
+            TestEagerLoadingSingleton();
+            TestLazyLoadingWithLockSingleton();
+            TestLazyLoadingWithLazyClassSingleton();
+        }
+
+        static void TestEagerLoadingSingleton()
+        {
             EagerLoading.Singleton s1 = EagerLoading.Singleton.Instance;
             EagerLoading.Singleton s2 = EagerLoading.Singleton.Instance;
+
+            if (s1 == s2)
+                System.Console.WriteLine("Equals");
+            else
+                System.Console.WriteLine("Not equals");
+        }
+
+        static void TestLazyLoadingWithLockSingleton()
+        {
+            LazyLoadingWithLock.Singleton s1 = LazyLoadingWithLock.Singleton.Instance;
+            LazyLoadingWithLock.Singleton s2 = LazyLoadingWithLock.Singleton.Instance;
+
+            if (s1 == s2)
+                System.Console.WriteLine("Equals");
+            else
+                System.Console.WriteLine("Not equals");
+        }
+
+        static void TestLazyLoadingWithLazyClassSingleton()
+        {
+            LazyLoadingWithLazyClass.Singleton s1 = LazyLoadingWithLazyClass.Singleton.Instance;
+            LazyLoadingWithLazyClass.Singleton s2 = LazyLoadingWithLazyClass.Singleton.Instance;
 
             if (s1 == s2)
                 System.Console.WriteLine("Equals");
@@ -52,11 +81,12 @@ namespace LazyLoadingWithLock
                         }
                     }
                 }
+
                 return instance;
             }
         }
 
-        private static object _lock = new object();
+        private static readonly object _lock = new object();
     }
 }
 
@@ -70,13 +100,7 @@ namespace LazyLoadingWithLazyClass
         private Singleton() { }
         private static readonly Lazy<Singleton> instance = new Lazy<Singleton>(() => new Singleton());
 
-        public static Singleton Instance
-        {
-            get
-            {
-                return instance.Value;
-            }
-        }
+        public static Singleton Instance => instance.Value;
     }
 }
 
