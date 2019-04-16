@@ -68,11 +68,18 @@ namespace SimpleYoutube
 
     internal class Video
     {
+        private Kanal kanal;
+
         public string Name { get; }
 
         public Video(string name)
         {
             Name = name;
+        }
+
+        public void Set(Kanal kanal)
+        {
+            this.kanal = kanal;
         }
     }
 
@@ -94,6 +101,7 @@ namespace SimpleYoutube
         internal void Upload(Video video)
         {
             videos.Add(video);
+            video.Set(this);
 
             foreach (Abonennt abonennt in abonennten)
             {
