@@ -54,7 +54,7 @@ namespace SimpleYoutube
             kanäle = new List<Kanal>();
         }
 
-        internal void Abonniere(Kanal kanal)
+        public void Abonniere(Kanal kanal)
         {
             kanäle.Add(kanal);
             kanal.Add(this);
@@ -77,7 +77,7 @@ namespace SimpleYoutube
             Name = name;
         }
 
-        public void Set(Kanal kanal)
+        internal void Set(Kanal kanal)
         {
             this.kanal = kanal;
         }
@@ -98,7 +98,7 @@ namespace SimpleYoutube
             videos = new List<Video>();
         }
 
-        internal void Upload(Video video)
+        public void Upload(Video video)
         {
             videos.Add(video);
             video.Set(this);
