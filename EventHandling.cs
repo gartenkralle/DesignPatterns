@@ -14,13 +14,14 @@ namespace EventHandling
             database.Temperature = 10;
             database.TemperatureChanged += Database_TemperatureChanged;
             database.Temperature = 20;
+            database.Temperature = 30;
         }
 
         private static void Database_TemperatureChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (sender is Database database)
+            if (e.PropertyName == nameof(Database.Temperature))
             {
-                Console.WriteLine("New Temperature is: " + database.Temperature);
+                Console.WriteLine("New Temperature is: " + (int)sender);
             }
         }
     }
@@ -42,7 +43,7 @@ namespace EventHandling
                 if (value != temperature)
                 {
                     temperature = value;
-                    TemperatureChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Temperature)));
+                    TemperatureChanged?.Invoke(temperature, new PropertyChangedEventArgs(nameof(Temperature)));
                 }
             }
         }
