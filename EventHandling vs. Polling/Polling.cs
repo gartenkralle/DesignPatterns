@@ -19,8 +19,7 @@ namespace Polling
             database.Temperature = 20;
             Thread.Sleep(400);
             database.Temperature = 30;
-
-            Thread.Sleep(1000000); //Program does not end
+            Thread.Sleep(400);
         }
 
         private static void Database_TemperatureChanged(object sender, PropertyChangedEventArgs e)
@@ -56,12 +55,12 @@ namespace Polling
     {
         static ValueType lastValue;
 
-        public static void Poll(Func<ValueType> intValue, string nameofProperty, PropertyChangedEventHandler valueChanged)
+        public static void Poll(Func<ValueType> value, string nameofProperty, PropertyChangedEventHandler valueChanged)
         {
             int delay = 100;
             CancellationToken token = new CancellationTokenSource().Token;
 
-            lastValue = intValue();
+            lastValue = value();
 
             Task listener = Task.Factory.StartNew(() =>
             {
@@ -70,10 +69,10 @@ namespace Polling
                     if (token.IsCancellationRequested)
                         break;
 
-                    if (!lastValue.Equals(intValue()))
-                        valueChanged?.Invoke(intValue(), new PropertyChangedEventArgs(nameofProperty));
+                    if (!lastValue.Equals(value()))
+                        valueChanged?.Invoke(value(), new PropertyChangedEventArgs(nameofProperty));
 
-                    lastValue = intValue();
+                    lastValue = value();
                     Thread.Sleep(delay);
                 }
             }, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
