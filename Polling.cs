@@ -19,15 +19,14 @@ namespace Polling
             database.Temperature = 20;
             Thread.Sleep(400);
             database.Temperature = 30;
-
-            Thread.Sleep(1000000); //Program does not end
+            Thread.Sleep(400);
         }
 
         private static void Database_TemperatureChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (sender is int temperature)
+            if (e.PropertyName == nameof(Database.Temperature))
             {
-                Console.WriteLine("New Temperature is: " + temperature);
+                Console.WriteLine("New Temperature is: " + (int)sender);
             }
         }
     }
