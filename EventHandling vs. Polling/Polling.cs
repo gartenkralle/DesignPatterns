@@ -7,14 +7,14 @@ namespace Polling
 {
     class Program
     {
-        static Database database;
-
         static void Main(string[] args)
         {
-            database = new Database();
+            Helper helper = new Helper();
+
+            Database database = new Database();
 
             database.Temperature = 10;
-            Helper.Poll(() => database.Temperature, nameof(Database.Temperature), Database_TemperatureChanged);
+            helper.Poll(() => database.Temperature, nameof(Database.Temperature), Database_TemperatureChanged);
             database.Temperature = 20;
             Thread.Sleep(400);
             database.Temperature = 30;
@@ -23,9 +23,9 @@ namespace Polling
 
         private static void Database_TemperatureChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (sender is int temperature)
+            if (e.PropertyName == nameof(Database.Temperature))
             {
-                Console.WriteLine("New Temperature is: " + temperature);
+                Console.WriteLine("New Temperature is: " + (int)sender);
             }
         }
     }
@@ -52,9 +52,9 @@ namespace Polling
 
     public class Helper
     {
-        static ValueType lastValue;
+        ValueType lastValue;
 
-        public static void Poll(Func<ValueType> value, string nameofProperty, PropertyChangedEventHandler valueChanged)
+        public void Poll(Func<ValueType> value, string nameofProperty, PropertyChangedEventHandler valueChanged)
         {
             int delay = 100;
             CancellationToken token = new CancellationTokenSource().Token;
@@ -66,10 +66,14 @@ namespace Polling
                 while (true)
                 {
                     if (token.IsCancellationRequested)
+                    {
                         break;
+                    }
 
                     if (!lastValue.Equals(value()))
+                    {
                         valueChanged?.Invoke(value(), new PropertyChangedEventArgs(nameofProperty));
+                    }
 
                     lastValue = value();
                     Thread.Sleep(delay);
