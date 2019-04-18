@@ -5,11 +5,9 @@ namespace EventHandling
 {
     class Program
     {
-        static Database database;
-
         static void Main(string[] args)
         {
-            database = new Database();
+            Database database = new Database();
 
             database.Temperature = 10;
             database.TemperatureChanged += Database_TemperatureChanged;
