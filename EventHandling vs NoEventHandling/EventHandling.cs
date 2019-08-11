@@ -76,11 +76,14 @@ namespace ConsoleApp2
 
         public void InformiereMich(Kanal kanal, bool notify)
         {
+            if (this.notify == notify)
+                return;
+
             if (kanäle.Contains(kanal))
             {
-                if (!this.notify && notify)
+                if (notify)
                     kanal.VideoAdded += HeyNeuesVideo;
-                else if (this.notify && !notify)
+                else
                     kanal.VideoAdded -= HeyNeuesVideo;
 
                 this.notify = notify;
