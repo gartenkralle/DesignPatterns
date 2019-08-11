@@ -13,11 +13,15 @@ namespace ConsoleApp2
             Abonnent abonnent = new Abonnent();
             abonnent.Abonniere(kanal);
             abonnent.InformiereMich(kanal, true);
-            abonnent.InformiereMich(kanal, false);
 
             Abonnent abonnent2 = new Abonnent();
             abonnent2.Abonniere(kanal);
             abonnent2.InformiereMich(kanal, true);
+            abonnent2.InformiereMich(kanal, true);
+            abonnent2.InformiereMich(kanal, false);
+
+            Abonnent abonnent3 = new Abonnent();
+            abonnent3.InformiereMich(kanal, true);
 
             kanal.Upload(new Video("3"));
         }
@@ -62,6 +66,7 @@ namespace ConsoleApp2
     class Abonnent
     {
         private List<Kanal> kanäle = new List<Kanal>();
+        private bool notify = false;
 
         public void Abonniere(Kanal kanal)
         {
@@ -69,12 +74,17 @@ namespace ConsoleApp2
             kanal.Add(this);
         }
 
-        public void InformiereMich(Kanal kanal, bool status)
+        public void InformiereMich(Kanal kanal, bool notify)
         {
-            if (status)
-                kanal.VideoAdded += HeyNeuesVideo;
-            else
-                kanal.VideoAdded -= HeyNeuesVideo;
+            if (kanäle.Contains(kanal))
+            {
+                if (!this.notify && notify)
+                    kanal.VideoAdded += HeyNeuesVideo;
+                else if (this.notify && !notify)
+                    kanal.VideoAdded -= HeyNeuesVideo;
+
+                this.notify = notify;
+            }
         }
 
         public void HeyNeuesVideo(Video video)
